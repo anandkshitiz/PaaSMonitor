@@ -1,0 +1,114 @@
+[
+    {
+        "attr": {
+            "id": "Dev3",
+            "name": "Dev3 PaaS Environment"
+        },
+        "children": [
+            {
+                "attr": {
+                    "id": "OALSCMECADConnectBE",
+                    "name": "OALSCMECADConnectBE",
+                    "finalStatus": "UP",                    
+                    "health": "HEALTH_OK",
+                    "state": "STATE_PREPARED",
+                    "targetStates": [                        
+                        {
+                            "target": "DefaultServer",
+                            "state": "STATE_ACTIVE"
+                        }
+                    ],
+                    "dataSources": [],
+                    "workManagers": [
+                        {
+                            "pendingRequests": 0,
+                            "completedRequests": 0,
+                            "name": "default",
+                            "server": "DefaultServer"
+                        }
+                    ],
+                    "minThreadsConstraints": [],
+                    "maxThreadsConstraints": [],
+                    "requestClasses": [],
+                    "messages": [],
+                    "type": "war"
+                }
+            },
+            {
+                "attr": {
+                    "id": "OALSCMECADConnectUI",
+                    "name": "OALSCMECADConnectUI",
+                    "finalStatus": "UP",                    
+                    "health": "HEALTH_OK",
+                    "state": "STATE_PREPARED",
+                    "targetStates": [                        
+                        {
+                            "target": "DefaultServer",
+                            "state": "STATE_ACTIVE"
+                        }
+                    ],
+                    "dataSources": [],
+                    "workManagers": [
+                        {
+                            "pendingRequests": 0,
+                            "completedRequests": 0,
+                            "name": "default",
+                            "server": "DefaultServer"
+                        }
+                    ],
+                    "minThreadsConstraints": [],
+                    "maxThreadsConstraints": [],
+                    "requestClasses": [],
+                    "messages": [],
+                    "type": "war"
+                }
+            },
+            {
+                "attr": {
+                    "id": "OALSCMProductRedlinesUI",
+                    "name": "OALSCMProductRedlinesUI",
+                    "finalStatus": "DOWN",                    
+                    "health": "",
+                    "state": "",
+                    "targetStates": [                                                
+                    ],
+                    "dataSources": [],
+                    "workManagers": [                        
+                    ],
+                    "minThreadsConstraints": [],
+                    "maxThreadsConstraints": [],
+                    "requestClasses": [],
+                    "type": "war",
+                    "messages": []
+                }
+            }
+        ]
+    },
+    {
+        "attr": {
+            "id": "Dev1",
+            "name": "Dev1 PaaS Environment"
+        },
+        "children": [
+            {
+                "attr": {
+                    "id": "OALSCMProductRedlinesUI",
+                    "name": "OALSCMProductRedlinesUI",
+                    "finalStatus": "DOWN",                    
+                    "health": "",
+                    "state": "",
+                    "targetStates": [                                                
+                    ],
+                    "dataSources": [],
+                    "workManagers": [                        
+                    ],
+                    "minThreadsConstraints": [],
+                    "maxThreadsConstraints": [],
+                    "requestClasses": [],
+                    "type": "war",
+                    "messages": []
+                }
+            }
+        ]
+    }  
+]

@@ -1,0 +1,46 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+
+.demo-app-name{
+  color: #333;
+  font-size: 15px;
+  font-weight: bold
+}
+
+.demo-app-details{
+  color: #333;
+  font-size: 15px; 
+}
+
+.demo-secondRow{
+  color: #309fdb;
+  font-size: 42px;
+  text-align: center;
+}
+
+.demo-secondRow-label{
+  text-align: center;
+  white-space: nowrap;
+}
+
+.demo-log-icon:before{
+    content:url("images/log-24.png")
+}
+
+.demo-thread-icon:before{
+    content:url("images/process-24.png")
+}
+
+.demo-add-icon:before{
+    content:url("images/add_Black.png")
+}
+
+.demo-status {
+  width: 45px;
+  margin-top: 15px;
+}
