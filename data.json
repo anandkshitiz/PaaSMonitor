@@ -10,8 +10,8 @@
                     "id": "OALSCMECADConnectBE",
                     "name": "OALSCMECADConnectBE",
                     "finalStatus": "UP",                    
-                    "health": "HEALTH_OK",
-                    "state": "STATE_PREPARED",
+                    "health": "OK",
+                    "state": "PREPARED",
                     "targetStates": [                        
                         {
                             "target": "DefaultServer",
@@ -39,8 +39,8 @@
                     "id": "OALSCMECADConnectUI",
                     "name": "OALSCMECADConnectUI",
                     "finalStatus": "UP",                    
-                    "health": "HEALTH_OK",
-                    "state": "STATE_PREPARED",
+                    "health": "OK",
+                    "state": "PREPARED",
                     "targetStates": [                        
                         {
                             "target": "DefaultServer",
