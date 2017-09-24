@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="oj-flex-item oj-sm-12" id="listviewContainer">    
-            <ul id="listview" class="oj-listview-card-layout" aria-label="list with card layout for items in group" 
+            <ul id="listview" class="oj-listview-card-layout" 
                 data-bind="ojComponent: {component: 'ojListView', data: dataSource, item: {template: selectTemplate}, drillMode: 'none'}">
             </ul>              
         </div>    
@@ -64,7 +64,7 @@
 
     <script type="text/html" id="item_grid_template">
         <li class="oj-flex-item oj-sm-12 oj-md-6 oj-lg-4 oj-xl-3" data-bind="attr: {id: id}">       
-            <div class="oj-panel">
+            <div class="oj-panel ">
                 <div class="oj-flex oj-flex-items-pad">                    
                     <div class="oj-flex-item oj-sm-3"><img class="demo-status" border="0" data-bind="attr:{src: 'css/images/' + finalStatus + '.png'}">
                     </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="oj-flex-item oj-sm-4">
                         <div class="demo-secondRow" data-bind="click:$parent.workManagerss,text:workManagers.length"> 2</div>
-                        <div class="demo-secondRow-label">Work Managers</div>
+                        <div class="demo-secondRow-label">Requests</div>
                     </div>
                 </div>
                 <div class="oj-flex oj-flex-items-pad oj-margin-top" style="float: right;">

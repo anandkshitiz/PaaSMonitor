@@ -81,7 +81,7 @@
                     "type": "war",
                     "messages": []
                 }
-            }
+            }            
         ]
     },
     {
@@ -94,6 +94,25 @@
                 "attr": {
                     "id": "OALSCMProductRedlinesUI",
                     "name": "OALSCMProductRedlinesUI",
+                    "finalStatus": "DOWN",                    
+                    "health": "",
+                    "state": "",
+                    "targetStates": [                                                
+                    ],
+                    "dataSources": [],
+                    "workManagers": [                        
+                    ],
+                    "minThreadsConstraints": [],
+                    "maxThreadsConstraints": [],
+                    "requestClasses": [],
+                    "type": "war",
+                    "messages": []
+                }
+            },
+            {
+                "attr": {
+                    "id": "OALSCMProductRedlinesBE",
+                    "name": "OALSCMProductRedlinesBE",
                     "finalStatus": "DOWN",                    
                     "health": "",
                     "state": "",
