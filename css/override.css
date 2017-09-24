@@ -41,6 +41,10 @@
     content:url("images/add_Black.png")
 }
 
+.demo-refresh-icon:before{
+    content:url("images/refresh.png")
+}
+
 .demo-status {
   width: 45px;
   margin-top: 15px;

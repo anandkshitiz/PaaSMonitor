@@ -25,7 +25,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview',
                 };
                 self.thread = function (data) {
                     console.log("Thread" + data);
-
                 };
                 self.targetStates = function (data) {
                     console.log("TargetStates" + data);
@@ -40,6 +39,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview',
                 self.addItem = function (data) {
                     console.log("Add called");
                     $("#addMoniterPanelPopUp").ojDialog("open");
+                };
+                
+                self.refresh = function(data){
+                  console.log("refresh");  
                 };
                 self.nameSearch = ko.observable('');
 

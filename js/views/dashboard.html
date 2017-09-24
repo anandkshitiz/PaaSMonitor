@@ -45,6 +45,14 @@
                 </div>
                 <div class="oj-flex-item oj-sm-1">
                     <button style="float: right"
+                            data-bind="click: refresh,  ojComponent: {
+                                   component:'ojButton', 
+                                   chroming: 'half',
+                                   display:'icons',
+                                   icons: {start:'demo-refresh-icon demo-icon-font'},
+                                   label: 'Refresh'
+                       }"/></button>
+                    <button style="float: right"
                             data-bind="click: addItem,  ojComponent: {
                                    component:'ojButton', 
                                    chroming: 'half',
