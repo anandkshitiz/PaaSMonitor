@@ -11,7 +11,7 @@
                     "name": "OALSCMECADConnectBE",
                     "finalStatus": "UP",                    
                     "health": "OK",
-                    "state": "PREPARED",
+                    "state": "ACTIVE",
                     "targetStates": [                        
                         {
                             "target": "DefaultServer",
