@@ -63,12 +63,12 @@
          ** query size for a phone format and hidden until a user clicks on
          ** the header hamburger icon.
       -->
-      <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start">
+<!--      <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start">
         <div role="navigation" data-bind="click: toggleDrawer, ojComponent: {component: 'ojNavigationList',
           navigationLevel: 'application', item: {template: 'navTemplate'}, data: navDataSource,
           selection: router.stateId, edge: 'start'}">
         </div>
-      </div>
+      </div>-->
       <div id="pageContent" class="oj-web-applayout-page" >
         <!--
            ** Oracle JET V3.2.0 web application header pattern.
@@ -79,12 +79,12 @@
         <header role="banner" class="oj-web-applayout-header">
           <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
             <!-- Offcanvas toggle button -->
-            <div class="oj-flex-bar-start oj-md-hide">
+<!--            <div class="oj-flex-bar-start oj-md-hide">
               <button id="drawerToggleButton" class="oj-button-lg" data-bind="click: toggleDrawer,
                 ojComponent: {component:'ojButton', label: 'Application Navigation',
                 chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}">
               </button>
-            </div>
+            </div>-->
             <div data-bind="css: smScreen() ? 'oj-flex-bar-center-absolute' : 'oj-flex-bar-middle oj-sm-align-items-baseline'">
               <span role="img" class="oj-sm-only-hide oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
               <h1 class="oj-web-applayout-header-title" title="Application Name" data-bind="text: appName"></h1>

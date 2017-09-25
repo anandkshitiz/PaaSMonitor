@@ -5,7 +5,7 @@
 
 <div style="display:none" id="addMoniterPanelPopUp" title="Add Item"
      data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',
-              rootAttributes: {style: 'width:35%;height:32vh;overflow-x:hidden'}}">
+              rootAttributes: {style: 'width:35%;height:35vh;overflow-x:hidden'}}">
     <div class="oj-dialog-body">
         <div class="oj-flex-item oj-sm-12  oj-flex">
             <div class="oj-flex-item oj-sm-12 oj-padding" >
@@ -35,96 +35,96 @@
     </div>
 </div>
 
-    <div class="oj-panel oj-flex">    
-        <div class="oj-flex-item oj-sm-12 oj-margin">
-            <div class="oj-flex oj-flex-items-pad oj-sm-align-items-flex-end">                    
-                <div class="oj-flex-item oj-sm-11 oj-flex oj-md-justify-content-center">
-                    <div class="oj-flex-item" style="max-width: 400px; white-space: nowrap">
-                        <input aria-label="search box" placeholder="search" data-bind="value: nameSearch, valueUpdate: 'afterkeydown', ojComponent: {component: 'ojInputText', rootAttributes:{'style':'max-width:100%;'}}"/>                   
-                    </div>
+<div class="oj-panel oj-flex">    
+    <div class="oj-flex-item oj-sm-12 oj-margin">
+        <div class="oj-flex oj-flex-items-pad oj-sm-align-items-flex-end">                    
+            <div class="oj-flex-item oj-sm-11 oj-flex oj-md-justify-content-center">
+                <div class="oj-flex-item" style="max-width: 400px; white-space: nowrap">
+                    <input aria-label="search box" placeholder="search" data-bind="value: nameSearch, valueUpdate: 'afterkeydown', ojComponent: {component: 'ojInputText', rootAttributes:{'style':'max-width:100%;'}}"/>                   
                 </div>
-                <div class="oj-flex-item oj-sm-1">
-                    <button style="float: right"
-                            data-bind="click: refresh,  ojComponent: {
-                                   component:'ojButton', 
-                                   chroming: 'half',
-                                   display:'icons',
-                                   icons: {start:'demo-refresh-icon demo-icon-font'},
-                                   label: 'Refresh'
-                       }"/></button>
-                    <button style="float: right"
-                            data-bind="click: addItem,  ojComponent: {
+            </div>
+            <div class="oj-flex-item oj-sm-1">
+                <button style="float: right"
+                        data-bind="click: addItem,  ojComponent: {
                                    component:'ojButton', 
                                    chroming: 'half',
                                    display:'icons',
                                    icons: {start:'demo-add-icon demo-icon-font'},
                                    label: 'Add'
                        }"/></button>
+                <button style="float: right"
+                        data-bind="click: refresh,  ojComponent: {
+                                   component:'ojButton', 
+                                   chroming: 'half',
+                                   display:'icons',
+                                   icons: {start:'demo-refresh-icon demo-icon-font'},
+                                   label: 'Refresh'
+                       }"/></button>                
+            </div>
+        </div>
+    </div>
+    <div class="oj-flex-item oj-sm-12" id="listviewContainer">    
+        <ul id="listview" class="oj-listview-card-layout" 
+            data-bind="ojComponent: {component: 'ojListView', data: dataSource,item: {template: selectTemplate}, drillMode: 'none'}">
+        </ul>              
+    </div>    
+</div>
+
+<script type="text/html" id="item_grid_template">
+    <li class="oj-flex-item oj-sm-12 oj-md-6 oj-lg-4 oj-xl-3" data-bind="attr: {id: id}" style="border: 0px;margin-right: 0px">       
+        <div class="oj-panel ">                
+            <div class="oj-flex oj-flex-items-pad" >                    
+                <div class="oj-flex-item oj-sm-3"><img class="demo-status" border="0" data-bind="attr:{src: 'css/images/' + finalStatus + '.png'}">
+                </div>
+                <div class="oj-flex-item oj-sm-9" >
+                    <h2 class="demo-app-name" data-bind="text:name"></h2>                    
+                    <div><span class="demo-app-details">Health: </span><span class="demo-app-details" data-bind="text:health"></span></div>
+                    <div><span class="demo-app-details">State: </span><span class="demo-app-details" data-bind="text:state"></span></div>
+                </div>
+            </div>   
+            <div class="oj-flex oj-flex-items-pad">
+                <div class="oj-flex-item oj-sm-4">                    
+                    <div class="demo-secondRow"  data-bind="click:$parent.targetStates,text:targetStates.length"></div>
+                    <div class="demo-secondRow-label">Target States</div>
+                </div>
+                <div class="oj-flex-item oj-sm-4">
+                    <div class="demo-secondRow" data-bind="click:$parent.dataSources,text:dataSources.length"> 2</div>
+                    <div class="demo-secondRow-label">Data Sources</div>
+                </div>
+                <div class="oj-flex-item oj-sm-4">
+                    <div class="demo-secondRow" data-bind="click:$parent.workManagerss,text:workManagers.length"> 2</div>
+                    <div class="demo-secondRow-label">Requests</div>
+                </div>
+            </div>
+            <div class="oj-flex oj-flex-items-pad oj-margin-top" style="float: right;">
+                <button id= "log" class="" data-bind="click: $parent.clampLog, ojComponent: { component: 'ojButton',display:'icons',chroming: 'half',icons: {start:'demo-log-icon oj-fwk-icon'} ,label:'Logs'}"></button>
+                <button id= "thread" class="" data-bind="click: $parent.thread, ojComponent: { component: 'ojButton',display:'icons',chroming: 'half',icons: {start:'demo-thread-icon oj-fwk-icon'} ,label:'Threads'}"></button>                
+            </div>
+        </div>        
+    </li>
+</script>
+
+<script type="text/html" id="group_template">
+    <li data-bind="attr: {id: id}">
+        <span data-bind="text: name"></span>
+    </li>
+</script>
+
+<script type="text/html" id="item_template">
+    <li data-bind="attr: {id: id}">
+        <div class="oj-flex" style="flex-wrap: nowrap">
+            <span class="oj-flex-item" data-bind="style: { backgroundImage: 'url(\'images/listView/' + type + '.png\')', 
+                 backgroundRepeat: 'no-repeat', backgroundSize: '40px 40px', minHeight: '40px', minWidth: '40px', maxWidth: '40px' }, attr: { 'aria-label': type }">
+            </span>
+            <div class="oj-flex-item demo-content">
+                <div>
+                    <span data-bind="text: name"></span>
+                </div>
+                <div>
+                    <span class="oj-text-xs oj-text-secondary-color" data-bind="text: 'Last modified on ' + modified"></span>
                 </div>
             </div>
         </div>
-        <div class="oj-flex-item oj-sm-12" id="listviewContainer">    
-            <ul id="listview" class="oj-listview-card-layout" 
-                data-bind="ojComponent: {component: 'ojListView', data: dataSource, item: {template: selectTemplate}, drillMode: 'none'}">
-            </ul>              
-        </div>    
-    </div>
-
-    <script type="text/html" id="item_grid_template">
-        <li class="oj-flex-item oj-sm-12 oj-md-6 oj-lg-4 oj-xl-3" data-bind="attr: {id: id}">       
-            <div class="oj-panel ">                
-                <div class="oj-flex oj-flex-items-pad" >                    
-                    <div class="oj-flex-item oj-sm-3"><img class="demo-status" border="0" data-bind="attr:{src: 'css/images/' + finalStatus + '.png'}">
-                    </div>
-                    <div class="oj-flex-item oj-sm-9" >
-                        <h2 class="demo-app-name" data-bind="text:name"></h2>                    
-                        <div><span class="demo-app-details">Health: </span><span class="demo-app-details" data-bind="text:health"></span></div>
-                        <div><span class="demo-app-details">State: </span><span class="demo-app-details" data-bind="text:state"></span></div>
-                    </div>
-                </div>   
-                <div class="oj-flex oj-flex-items-pad">
-                    <div class="oj-flex-item oj-sm-4">                    
-                        <div class="demo-secondRow"  data-bind="click:$parent.targetStates,text:targetStates.length"></div>
-                        <div class="demo-secondRow-label">Target States</div>
-                    </div>
-                    <div class="oj-flex-item oj-sm-4">
-                        <div class="demo-secondRow" data-bind="click:$parent.dataSources,text:dataSources.length"> 2</div>
-                        <div class="demo-secondRow-label">Data Sources</div>
-                    </div>
-                    <div class="oj-flex-item oj-sm-4">
-                        <div class="demo-secondRow" data-bind="click:$parent.workManagerss,text:workManagers.length"> 2</div>
-                        <div class="demo-secondRow-label">Requests</div>
-                    </div>
-                </div>
-                <div class="oj-flex oj-flex-items-pad oj-margin-top" style="float: right;">
-                    <button id= "log" class="" data-bind="click: $parent.clampLog, ojComponent: { component: 'ojButton',display:'icons',chroming: 'half',icons: {start:'demo-log-icon oj-fwk-icon'} ,label:'Logs'}"></button>
-                    <button id= "thread" class="" data-bind="click: $parent.thread, ojComponent: { component: 'ojButton',display:'icons',chroming: 'half',icons: {start:'demo-thread-icon oj-fwk-icon'} ,label:'Threads'}"></button>                
-                </div>
-            </div>        
-        </li>
-    </script>
-
-    <script type="text/html" id="group_template">
-        <li data-bind="attr: {id: id}">
-            <span data-bind="text: name"></span>
-        </li>
-    </script>
-
-    <script type="text/html" id="item_template">
-        <li data-bind="attr: {id: id}">
-            <div class="oj-flex" style="flex-wrap: nowrap">
-                <span class="oj-flex-item" data-bind="style: { backgroundImage: 'url(\'images/listView/' + type + '.png\')', 
-                 backgroundRepeat: 'no-repeat', backgroundSize: '40px 40px', minHeight: '40px', minWidth: '40px', maxWidth: '40px' }, attr: { 'aria-label': type }">
-                </span>
-                <div class="oj-flex-item demo-content">
-                    <div>
-                        <span data-bind="text: name"></span>
-                    </div>
-                    <div>
-                        <span class="oj-text-xs oj-text-secondary-color" data-bind="text: 'Last modified on ' + modified"></span>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </script>
+    </li>
+</script>
 
